@@ -20,19 +20,20 @@ def img_to_bytes(img):
     img.save(buffered, format=img.format)
     img_str = base64.b64encode(buffered.getvalue())
     strIMG = img_str.decode("utf-8")
-    resp = get_response(strIMG)
-    return resp
+    resp, pred = get_response(strIMG)
+    return resp, pred
 
 def get_response(ImgStr):
     url = 'https://0d9fc9cc-ecb4-4528-9b1e-ac453bc20061.syndic.ai'
     data = {'url': ImgStr}
 
-    x = requests.post(url, data)
-    return x.text
+    x, y = requests.post(url, data)
+    return x.text, y.text
 
 if file_up is not None:
     # display image that user uploaded
     image = Image.open(file_up)
-    result = img_to_bytes(image)
+    result, pred = img_to_bytes(image)
     st.image(image, caption = 'Original Image', width=350)
     st.write("Predictions: ",result)
+    st.write("Confidence: ",pred)
