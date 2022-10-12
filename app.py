@@ -20,8 +20,8 @@ def img_to_bytes(img):
     img.save(buffered, format=img.format)
     img_str = base64.b64encode(buffered.getvalue())
     strIMG = img_str.decode("utf-8")
-    resp, pred = get_response(strIMG)
-    return resp, pred
+    resp = get_response(strIMG)
+    return resp
 
 def get_response(ImgStr):
     url = 'https://f7736aea-c950-4bfa-8cdd-a558c21e8690.syndic.ai'
