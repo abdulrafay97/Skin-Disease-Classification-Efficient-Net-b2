@@ -27,8 +27,8 @@ def get_response(ImgStr):
     url = 'https://46ebbf42-4e69-4de4-a9ea-48920c1047d9.syndic.ai'
     data = {'url': ImgStr}
 
-    x, y = requests.post(url, data)
-    return x.text, y.text
+    x = requests.post(url, data)
+    return x.text
 
 if file_up is not None:
     # display image that user uploaded
@@ -36,4 +36,3 @@ if file_up is not None:
     result, pred = img_to_bytes(image)
     st.image(image, caption = 'Original Image', width=350)
     st.write("Predictions: ",result)
-    st.write("Confidence: ",pred)
