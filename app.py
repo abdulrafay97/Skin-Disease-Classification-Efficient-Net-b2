@@ -24,7 +24,7 @@ def img_to_bytes(img):
     return resp, pred
 
 def get_response(ImgStr):
-    url = 'https://46ebbf42-4e69-4de4-a9ea-48920c1047d9.syndic.ai'
+    url = 'https://f7736aea-c950-4bfa-8cdd-a558c21e8690.syndic.ai'
     data = {'url': ImgStr}
 
     x = requests.post(url, data)
