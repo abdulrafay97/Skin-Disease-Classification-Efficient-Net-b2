@@ -34,5 +34,5 @@ if file_up is not None:
     # display image that user uploaded
     image = Image.open(file_up)
     result = img_to_bytes(image)
-    st.image(image, caption = 'Uploaded Image.', use_column_width = True)
+    st.image(image, caption = 'Original Image', width=350)
     st.write("Predictions: ",result)
