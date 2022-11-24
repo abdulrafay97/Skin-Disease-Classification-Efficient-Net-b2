@@ -12,7 +12,8 @@ disable_warnings(InsecureRequestWarning)
 
 icon = Image.open('skin.jpg')
 st.set_page_config(page_title='Classifier', page_icon = icon)
-st.sidebar.subheader(("Input the Disease Picture."))
+st.header('Skin Disease Classifier')
+st.sidebar.subheader(("Input a Disease Picture"))
 
 #Get Image
 file_up = st.sidebar.file_uploader('Upload an Image', type = "jpg")
